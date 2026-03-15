@@ -1,0 +1,33 @@
+{
+  "name": "AutoParts Finder",
+  "short_name": "AutoParts",
+  "description": "Search used auto parts across eBay, Car-Part.com, Craigslist and more",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "categories": ["shopping", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Search Parts",
+      "url": "/search",
+      "description": "Search for auto parts"
+    }
+  ]
+}
