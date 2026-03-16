@@ -31,6 +31,13 @@ const initialSources = [
     configJson: { rateLimit: 1, delayMs: 5000, requiresProxy: true },
   },
   {
+    key: 'offerup',
+    name: 'OfferUp',
+    baseUrl: 'https://offerup.com',
+    isActive: true,
+    configJson: { rateLimit: 1, delayMs: 2000 },
+  },
+  {
     key: 'lkq',
     name: 'LKQ Online',
     baseUrl: 'https://www.lkqonline.com',

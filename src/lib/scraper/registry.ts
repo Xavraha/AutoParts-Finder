@@ -5,6 +5,7 @@ import { CarPartAdapter } from './adapters/carpart.adapter';
 import { CraigslistAdapter } from './adapters/craigslist.adapter';
 import { FacebookAdapter } from './adapters/facebook.adapter';
 import { LkqAdapter } from './adapters/lkq.adapter';
+import { OfferUpAdapter } from './adapters/offerup.adapter';
 
 function buildAdapters(): SourceAdapter[] {
   const adapters: SourceAdapter[] = [];
@@ -17,6 +18,7 @@ function buildAdapters(): SourceAdapter[] {
 
   adapters.push(new CarPartAdapter());
   adapters.push(new CraigslistAdapter());
+  adapters.push(new OfferUpAdapter());
   adapters.push(new LkqAdapter());
 
   // Facebook: optional, only active when Apify token is configured
