@@ -66,12 +66,12 @@ function SearchResults() {
         <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
           <div>
             {q && (
-              <h1 className="text-lg font-semibold text-gray-900">
+              <h1 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                 Results for &ldquo;{q}&rdquo;
               </h1>
             )}
             {!loading && data && (
-              <p className="text-sm text-gray-500">{data.totalResults} listings found</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">{data.totalResults} listings found</p>
             )}
           </div>
 
@@ -79,7 +79,7 @@ function SearchResults() {
           {sources.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {sources.map((s) => (
-                <span key={s.key} className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600">
+                <span key={s.key} className="rounded-full bg-gray-100 dark:bg-gray-800 px-3 py-1 text-xs text-gray-600 dark:text-gray-300">
                   {s.key}: {s.resultCount}
                 </span>
               ))}
@@ -114,8 +114,8 @@ function SearchResults() {
         {!loading && !error && results.length === 0 && q && (
           <div className="flex flex-col items-center gap-3 py-16 text-center">
             <p className="text-4xl">🔧</p>
-            <p className="text-lg font-semibold text-gray-700">No parts found</p>
-            <p className="text-sm text-gray-400">
+            <p className="text-lg font-semibold text-gray-700 dark:text-gray-200">No parts found</p>
+            <p className="text-sm text-gray-400 dark:text-gray-500">
               Try a broader search term or increase the radius.
             </p>
           </div>
@@ -125,7 +125,7 @@ function SearchResults() {
         {!q && (
           <div className="flex flex-col items-center gap-3 py-16 text-center">
             <p className="text-4xl">🔍</p>
-            <p className="text-lg font-semibold text-gray-700">Enter a search term to begin</p>
+            <p className="text-lg font-semibold text-gray-700 dark:text-gray-200">Enter a search term to begin</p>
           </div>
         )}
       </div>

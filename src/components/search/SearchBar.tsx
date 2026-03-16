@@ -49,7 +49,7 @@ export function SearchBar({ compact = false }: SearchBarProps) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search auto parts (e.g. alternator Honda Civic 2018)"
-            className={`w-full rounded-xl border border-gray-300 bg-white pl-10 pr-4 text-gray-900 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 ${
+            className={`w-full rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 pl-10 pr-4 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 ${
               compact ? 'py-2 text-sm' : 'py-4 text-base'
             }`}
           />
@@ -75,7 +75,7 @@ export function SearchBar({ compact = false }: SearchBarProps) {
                 setQuery(s);
                 router.push(buildSearchUrl(s));
               }}
-              className="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600 hover:bg-gray-200 transition-colors"
+              className="rounded-full bg-gray-100 dark:bg-gray-700 px-3 py-1 text-xs text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             >
               {s}
             </button>

@@ -26,9 +26,9 @@ export function ResultCard({ listing }: ResultCardProps) {
   const location = [listing.city, listing.state].filter(Boolean).join(', ');
 
   return (
-    <div className="group flex gap-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm transition hover:shadow-md">
+    <div className="group flex gap-4 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 shadow-sm transition hover:shadow-md">
       {/* Thumbnail */}
-      <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-gray-100">
+      <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-700">
         {listing.imageUrls?.[0] ? (
           <Image
             src={listing.imageUrls[0]}
@@ -38,7 +38,7 @@ export function ResultCard({ listing }: ResultCardProps) {
             sizes="96px"
           />
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-gray-300 text-xs">
+          <div className="flex h-full w-full items-center justify-center text-gray-300 dark:text-gray-500 text-xs">
             No image
           </div>
         )}
@@ -47,29 +47,29 @@ export function ResultCard({ listing }: ResultCardProps) {
       {/* Content */}
       <div className="flex flex-1 flex-col gap-1 min-w-0">
         <div className="flex items-start justify-between gap-2">
-          <p className="line-clamp-2 text-sm font-medium text-gray-900">{listing.title}</p>
+          <p className="line-clamp-2 text-sm font-medium text-gray-900 dark:text-gray-100">{listing.title}</p>
           <button
             type="button"
             aria-label="Save to favorites"
-            className="shrink-0 text-gray-300 hover:text-red-500 transition-colors"
+            className="shrink-0 text-gray-300 dark:text-gray-600 hover:text-red-500 dark:hover:text-red-400 transition-colors"
           >
             <Heart className="h-5 w-5" />
           </button>
         </div>
 
-        <p className="text-lg font-bold text-green-600">{priceDisplay}</p>
+        <p className="text-lg font-bold text-green-600 dark:text-green-400">{priceDisplay}</p>
 
         <div className="flex flex-wrap items-center gap-2 mt-auto">
           <SourceBadge sourceKey={listing.sourceKey} sourceName={listing.sourceName} />
 
           {listing.condition && (
-            <span className="text-xs text-gray-500">
+            <span className="text-xs text-gray-500 dark:text-gray-400">
               {CONDITION_LABELS[listing.condition] ?? listing.condition}
             </span>
           )}
 
           {location && (
-            <span className="flex items-center gap-0.5 text-xs text-gray-400">
+            <span className="flex items-center gap-0.5 text-xs text-gray-400 dark:text-gray-500">
               <MapPin className="h-3 w-3" />
               {location}
               {listing.distanceMiles != null && ` · ${listing.distanceMiles.toFixed(0)} mi`}
@@ -80,7 +80,7 @@ export function ResultCard({ listing }: ResultCardProps) {
             href={`/api/listings/click?url=${encodeURIComponent(listing.originalUrl)}&source=${listing.sourceKey}`}
             target="_blank"
             rel="noopener noreferrer sponsored"
-            className="ml-auto flex items-center gap-1 text-xs text-blue-600 hover:underline"
+            className="ml-auto flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400 hover:underline"
           >
             View listing
             <ExternalLink className="h-3 w-3" />
